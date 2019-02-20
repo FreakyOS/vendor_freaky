@@ -141,6 +141,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 # Switch themes
 PRODUCT_PACKAGES += \
+    SwitchTelegram \
     SwitchOnePlus \
     SwitchStock \
     Contained \
