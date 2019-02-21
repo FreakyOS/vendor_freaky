@@ -1,3 +1,7 @@
+ifneq ($(SIGNING_KEYS),)
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
+endif
+
 # Set all versions
 CUSTOM_BUILD_TYPE ?= UNOFFICIAL
 
