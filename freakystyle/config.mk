@@ -135,6 +135,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.error.receiver.system.apps=com.google.android.gms \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
 
+
+# Switch themes
+PRODUCT_PACKAGES += \
+    SwitchOnePlus \
+    SwitchStock \
+    Contained \
+    Retro \
+    Narrow
+
 # Include product overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
