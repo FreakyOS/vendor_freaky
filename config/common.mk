@@ -154,10 +154,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Recorder \
     Terminal
+    
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures
 
 # Long Screenshot
 PRODUCT_PACKAGES += \
     StitchImage
+
+# TWRP Recovery
+ifeq ($(WITH_TWRP),true)
+RECOVERY_VARIANT := twrp
+endif
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
