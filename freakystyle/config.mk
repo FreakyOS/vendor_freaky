@@ -29,7 +29,6 @@ PRODUCT_PACKAGES += \
     WallpaperPickerGoogleRelease \
     WellbeingPrebuilt
     
-
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
     MatchmakerPrebuiltPixel4
