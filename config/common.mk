@@ -129,6 +129,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
+# Disable vendor restrictions
+PRODUCT_RESTRICT_VENDOR_FILES := false
+
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/freaky/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/freaky/overlay/common
 
@@ -159,6 +162,75 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StitchImage
 
+# Extra tools in Havoc
+PRODUCT_PACKAGES += \
+    7z \
+    awk \
+    bash \
+    bzip2 \
+    curl \
+    getcap \
+    htop \
+    lib7z \
+    libsepol \
+    nano \
+    pigz \
+    powertop \
+    setcap \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
+
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# rsync
+PRODUCT_PACKAGES += \
+    rsync
+
+# LatinIME lib
+PRODUCT_PACKAGES += \
+    libjni_latinimegoogle
+
+# Storage manager
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.storage_manager.enabled=true
+
+# Media
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    media.recorder.show_manufacturer_and_model=true
+
+# These packages are excluded from user builds
+PRODUCT_PACKAGES_DEBUG += \
+    procmem
+
+# Root
+PRODUCT_PACKAGES += \
+    adb_root
+ifneq ($(TARGET_BUILD_VARIANT),user)
+ifeq ($(WITH_SU),true)
+PRODUCT_PACKAGES += \
+    su
+endif
+endif
+
+# Enable ccache
+USE_CCACHE := true
+
+# Allows registering device to Google easier for gapps
+# Integrates package for easier Google Pay fixing
+PRODUCT_PACKAGES += \
+    sqlite3
+
 # TWRP Recovery
 ifeq ($(WITH_TWRP),true)
 RECOVERY_VARIANT := twrp
@@ -166,7 +238,7 @@ endif
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
-ifeq ($(TARGET_ARCH),arm64)
+ifeq ($(TARGET_ARCH),arm)
 ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
