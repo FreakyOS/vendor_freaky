@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     WallpaperPickerGoogleRelease \
     WellbeingPrebuilt
-    
 
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
