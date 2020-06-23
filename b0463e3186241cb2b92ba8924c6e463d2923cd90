@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12673850_43c220e2",
+        "filename": "config/common.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-06-23T14:16:04Z",
+      "side": 1,
+      "message": "need to check for deps",
+      "revId": "b0463e3186241cb2b92ba8924c6e463d2923cd90",
+      "serverId": "52305d8f-5d5a-4b15-9a96-2f03c7c153c6",
+      "unresolved": false
+    }
+  ]
+}
