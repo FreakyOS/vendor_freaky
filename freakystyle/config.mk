@@ -139,6 +139,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Switch themes
+PRODUCT_PACKAGES += \
+    SwitchOnePlus \
+    SwitchStock \
+    Contained \
+    Retro \
+    Narrow
+
 # Inherit from audio config
 $(call inherit-product, vendor/freaky/freakystyle/config/audio.mk)
 

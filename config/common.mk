@@ -134,7 +134,6 @@ DEVICE_PACKAGE_OVERLAYS += vendor/freaky/overlay/common
 PRODUCT_PACKAGES += \
     TouchGestures
 
-# PixelSetupWizard overlay
 PRODUCT_PACKAGES += \
     PixelSetupWizardOverlay \
     PixelSetupWizardAodOverlay
