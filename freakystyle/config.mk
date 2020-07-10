@@ -28,7 +28,9 @@ PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     TurboPrebuilt \
     WallpaperPickerGoogleRelease \
-    WellbeingPrebuilt
+    WellbeingPrebuilt \
+    MarkupGoogle \
+    LatinIMEGooglePrebuilt
     
 
 ifeq ($(TARGET_ARCH),arm64)
