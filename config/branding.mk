@@ -1,9 +1,11 @@
 # Releasekey
 ifneq ($(CUSTOM_BUILD_TYPE), OFFICIAL)
 SIGNING_KEYS := vendor/freaky/config/.releasekey
-ifneq ($(SIGNING_KEYS),)
-    PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
+ifneq ($(SIGNING_KEYS), vendor/freaky/config/.releasekey)
+PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
 endif
+else
+SIGNING_KEYS :=
 endif
 
 # Set all versions
