@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d09bf391_3b31d1c6",
+        "filename": "config/common.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-07-17T07:35:12Z",
+      "side": 1,
+      "message": "why it\u0027s again reverted back to TARGET_ARCH from TARGET_GAPPS_ARCH?",
+      "revId": "4067c4c9e078073c1c200ad13e2508fbeca41022",
+      "serverId": "52305d8f-5d5a-4b15-9a96-2f03c7c153c6",
+      "unresolved": true
+    }
+  ]
+}
