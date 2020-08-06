@@ -23,19 +23,36 @@ PRODUCT_PACKAGES += \
     SafetyHubPrebuilt \
     SettingsIntelligenceGooglePrebuilt \
     RetroMusicPlayer \
-    GalleryGoPrebuilt \
-    Via \
     SoundPickerPrebuilt \
     WallpaperPickerGoogleRelease \
     WellbeingPrebuilt \
     MarkupGoogle \
-    GoogleTTS
+    GoogleTTS \
+    CalculatorGooglePrebuilt \
+    PrebuiltDeskClockGoogle \
+    Chrome \
+    WebViewGoogle \
+    CarrierServices \
+    GalleryGoPrebuilt \
+    GoogleServicesFramework \
+    GoogleContacts \
+    GoogleContactsSyncAdapter
+
+ifeq ($(IS_PHONE),true)
+PRODUCT_PACKAGES += \
+    PrebuiltBugle \
+    com.google.android.dialer.support \
+    GoogleDialer
+endif
 
 ifeq ($(TARGET_ARCH), $(filter $(TARGET_ARCH),arm arm64))
 PRODUCT_PACKAGES += \
     TurboPrebuilt \
     LatinIMEGooglePrebuilt \
-    GoogleTTS
+    GoogleTTS \
+    PrebuiltBugle \
+    GoogleDialer \
+    WebViewGoogle
 endif
 
 ifeq ($(TARGET_ARCH),arm64)
