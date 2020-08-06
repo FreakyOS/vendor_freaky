@@ -11,8 +11,7 @@ PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver \
     Dialer \
-    Contacts \
-    messaging
+    Contacts
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
