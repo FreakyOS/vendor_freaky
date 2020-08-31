@@ -34,10 +34,6 @@ endif
 PRODUCT_PACKAGES += \
     OmniStyle
 
-# WallBucket
-PRODUCT_PACKAGES += \
-    WallBucket
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/freaky/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -218,17 +214,20 @@ endif
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
-ifeq ($(CUSTOM_BUILD_TYPE), OFFICIAL)
+ifeq ($(CUSTOM_BUILD_TYPE), $(filter $(CUSTOM_BUILD_TYPE), OFFICIAL))
 ifeq ($(TARGET_ARCH), $(filter $(TARGET_ARCH), arm64))
 ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
+
 TARGET_FACE_UNLOCK_SUPPORTED := true
-endif
-endif
-endif
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+endif
+endif
+endif
+
 
 # Branding
 include vendor/freaky/config/branding.mk
