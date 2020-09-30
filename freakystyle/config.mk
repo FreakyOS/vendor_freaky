@@ -36,7 +36,8 @@ PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     GoogleContacts \
     GoogleContactsSyncAdapter \
-    WallBucket
+    WallBucket \
+    FreakyStyles
 
 ifeq ($(IS_PHONE),true)
 PRODUCT_PACKAGES += \
