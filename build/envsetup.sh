@@ -384,7 +384,7 @@ function freakygerrit() {
     local user=`git config --get freakyos.me.username`
     local review=`git config --get remote.freaky.review`
     local project=`git config --get remote.freaky.projectname`
-    local remote_branch=ten
+    local remote_branch=never_dead
     local command=$1
     shift
     case $command in
