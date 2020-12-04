@@ -3,6 +3,7 @@
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017-2020 The LineageOS Project
 #           (C) 2020 The PixelExperience Project
+#           (C) 2020 The FreakyOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -48,7 +49,7 @@ trap cleanup 0
 #
 # $1: device name
 # $2: vendor name
-# $3: aosp root directory
+# $3: freaky root directory
 # $4: is common device - optional, default to false
 # $5: cleanup - optional, default to true
 # $6: custom vendor makefile name - optional, default to false
@@ -999,16 +1000,19 @@ function write_makefile_header() {
         elif [ $INITIAL_COPYRIGHT_YEAR -eq $YEAR ]; then
             printf "# Copyright (C) $YEAR The LineageOS Project\n" >> $1
             printf "# Copyright (C) $YEAR The PixelExperience Project\n" >> $1
+            printf "# Copyright (C) $YEAR The FreakyOS Project\n" >> $1
         elif [ $INITIAL_COPYRIGHT_YEAR -le 2017 ]; then
             printf "# Copyright (C) 2017-$YEAR The LineageOS Project\n" >> $1
             printf "# Copyright (C) 2017-$YEAR The PixelExperience Project\n" >> $1
         else
             printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The LineageOS Project\n" >> $1
             printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The PixelExperience Project\n" >> $1
+            printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The FreakyOS Project\n" >> $1
         fi
     else
         printf "# Copyright (C) $YEAR The LineageOS Project\n" >> $1
         printf "# Copyright (C) $YEAR The PixelExperience Project\n" >> $1
+        printf "# Copyright (C) $YEAR The FreakyOS Project\n" >> $1
     fi
 
     cat << EOF >> $1
@@ -1558,7 +1562,7 @@ function extract() {
                 fi
                 if [ -a "$DUMPDIR"/"$PARTITION".new.dat ]; then
                     echo "Converting "$PARTITION".new.dat to "$PARTITION".img"
-                    python "$AOSP_ROOT"/vendor/aosp/build/tools/sdat2img.py "$DUMPDIR"/"$PARTITION".transfer.list "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION".img 2>&1
+                    python "$AOSP_ROOT"/vendor/freaky/build/tools/sdat2img.py "$DUMPDIR"/"$PARTITION".transfer.list "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION".img 2>&1
                     rm -rf "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION"
                     mkdir "$DUMPDIR"/"$PARTITION" "$DUMPDIR"/tmp
                     echo "Requesting sudo access to mount the "$PARTITION".img"

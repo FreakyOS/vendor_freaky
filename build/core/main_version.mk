@@ -28,14 +28,17 @@ CUSTOM_BUILD_DATE := $(CUSTOM_DATE_YEAR)$(CUSTOM_DATE_MONTH)$(CUSTOM_DATE_DAY)-$
 
 CUSTOM_PLATFORM_VERSION := 11.0
 
-TARGET_PRODUCT_SHORT := $(subst aosp_,,$(CUSTOM_BUILD))
+BUILD_OS_NAME := FreakyOS
+FREAKY_VER := ver[X.I]
 
-CUSTOM_VERSION := PixelExperience_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-BETA-$(CUSTOM_BUILD_TYPE)
-CUSTOM_VERSION_PROP := eleven
+TARGET_PRODUCT_SHORT := $(subst freaky_,,$(CUSTOM_BUILD))
+
+CUSTOM_VERSION := FreakyOS_$(FREAKY_VER)-$(CUSTOM_BUILD)-$(CUSTOM_BUILD_DATE)-BETA-$(CUSTOM_BUILD_TYPE)
+CUSTOM_VERSION_PROP := never_dead
 
 ADDITIONAL_BUILD_PROPERTIES += \
-    org.pixelexperience.version=$(CUSTOM_VERSION_PROP) \
-    org.pixelexperience.version.display=$(CUSTOM_VERSION) \
-    org.pixelexperience.build_date=$(CUSTOM_BUILD_DATE) \
-    org.pixelexperience.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.pixelexperience.build_type=$(CUSTOM_BUILD_TYPE)
+    org.freaky.version=$(CUSTOM_VERSION_PROP) \
+    org.freaky.version.display=$(CUSTOM_VERSION) \
+    org.freaky.build_date=$(CUSTOM_BUILD_DATE) \
+    org.freaky.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    org.freaky.build_type=$(CUSTOM_BUILD_TYPE)
