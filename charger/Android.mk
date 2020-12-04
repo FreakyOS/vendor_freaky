@@ -17,11 +17,11 @@
 
 LOCAL_PATH := $(call my-dir)
 
-### pixel_charger_res_images ###
+### freaky_charger_res_images ###
 ifneq ($(strip $(LOCAL_CHARGER_NO_UI)),true)
 define _add-product-charger-image
 include $$(CLEAR_VARS)
-LOCAL_MODULE := pixel_charger_res_images_charger_$(notdir $(1))
+LOCAL_MODULE := freaky_charger_res_images_charger_$(notdir $(1))
 LOCAL_MODULE_STEM := $(notdir $(1))
 _img_modules += $$(LOCAL_MODULE)
 LOCAL_SRC_FILES := $1
@@ -37,10 +37,10 @@ _images :=
 $(foreach _img, $(call find-subdir-subdir-files, "images/charger", "*.png"), \
   $(eval $(call _add-product-charger-image,$(_img))))
 
-### pixel_charger_animation_file ###
+### freaky_charger_animation_file ###
 define _add-product-charger-animation-file
 include $$(CLEAR_VARS)
-LOCAL_MODULE := pixel_charger_res_values_charger_$(notdir $(1))
+LOCAL_MODULE := freaky_charger_res_values_charger_$(notdir $(1))
 LOCAL_MODULE_STEM := $(notdir $(1))
 _anim_modules += $$(LOCAL_MODULE)
 LOCAL_SRC_FILES := $1
