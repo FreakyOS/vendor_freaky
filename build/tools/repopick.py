@@ -154,8 +154,8 @@ def fetch_query(remote_url, query):
 
 
 if __name__ == '__main__':
-    # Default to PixelExperience Gerrit
-    default_gerrit = 'https://gerrit.pixelexperience.org'
+    # Default to FreakyOS Gerrit
+    default_gerrit = 'http://freakyos.xyz'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking

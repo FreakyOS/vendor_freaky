@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= PixelExperience
+PRODUCT_BRAND ?= FreakyOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -32,20 +32,20 @@ endif
 
 # Some permissions
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
-    vendor/aosp/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineagehw.xml
+    vendor/freaky/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
+    vendor/freaky/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineagehw.xml
 
 # Copy all custom init rc files
-$(foreach f,$(wildcard vendor/aosp/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/freaky/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/freaky/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/freaky/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -61,7 +61,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/custom-power-whitelist.xml:system/etc/sysconfig/custom-power-whitelist.xml
+    vendor/freaky/config/permissions/custom-power-whitelist.xml:system/etc/sysconfig/custom-power-whitelist.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -95,12 +95,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/aosp/overlay \
-    vendor/aosp/overlay-pixel \
+    vendor/freaky/overlay \
+    vendor/freaky/overlay-freaky \
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common \
-    vendor/aosp/overlay-pixel/common
+    vendor/freaky/overlay/common \
+    vendor/freaky/overlay-freaky/common
 
 # TouchGestures
 PRODUCT_PACKAGES += \
@@ -185,24 +185,24 @@ endif
 #endif
 
 # Apex
-$(call inherit-product, vendor/aosp/config/apex.mk)
+$(call inherit-product, vendor/freaky/config/apex.mk)
 
 # Audio
-$(call inherit-product, vendor/aosp/config/audio.mk)
+$(call inherit-product, vendor/freaky/config/audio.mk)
 
 # Bootanimation
-$(call inherit-product, vendor/aosp/config/bootanimation.mk)
+$(call inherit-product, vendor/freaky/config/bootanimation.mk)
 
 # Fonts
-$(call inherit-product, vendor/aosp/config/fonts.mk)
+$(call inherit-product, vendor/freaky/config/fonts.mk)
 
 # GApps
 $(call inherit-product, vendor/gapps/config.mk)
 
 # OTA
-$(call inherit-product, vendor/aosp/config/ota.mk)
+$(call inherit-product, vendor/freaky/config/ota.mk)
 
 # RRO Overlays
-$(call inherit-product, vendor/aosp/config/rro_overlays.mk)
+$(call inherit-product, vendor/freaky/config/rro_overlays.mk)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
