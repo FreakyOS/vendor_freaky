@@ -9,7 +9,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := apns-conf.xml
 LOCAL_MODULE_CLASS := ETC
 
-DEFAULT_APNS_FILE := vendor/aosp/prebuilt/common/etc/apns-conf.xml
+DEFAULT_APNS_FILE := vendor/freaky/prebuilt/common/etc/apns-conf.xml
 
 ifdef CUSTOM_APNS_FILE
 CUSTOM_APNS_SCRIPT := vendor/aosp/tools/custom_apns.py
