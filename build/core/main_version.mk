@@ -41,4 +41,5 @@ ADDITIONAL_BUILD_PROPERTIES += \
     org.freaky.version.display=$(CUSTOM_VERSION) \
     org.freaky.build_date=$(CUSTOM_BUILD_DATE) \
     org.freaky.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.freaky.build_type=$(CUSTOM_BUILD_TYPE)
+    org.freaky.build_type=$(CUSTOM_BUILD_TYPE) \
+    org.build.osname=$(BUILD_OS_NAME)
